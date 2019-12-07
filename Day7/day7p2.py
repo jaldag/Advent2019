@@ -11,7 +11,7 @@ def getIntcodeParm(modes, P, ip, parm):
         return P[P[ip + parm]]
     else:
         return P[ip + parm]
-def runComputer(phase, val) :
+def runComputer() :
     F = open('input.txt')
     P = [int(x) for x in  F.read().split(',')]
     F.close()
@@ -77,15 +77,15 @@ for a in range(5,10) :
                 for e in range(5, 10) :
                     if len(set([a, b, c, d, e])) != 5 :
                         continue
-                    aComp = runComputer(a, 0)
+                    aComp = runComputer()
                     next(aComp); aComp.send(a)
-                    bComp = runComputer(b, 0)
+                    bComp = runComputer()
                     next(bComp); bComp.send(b)
-                    cComp = runComputer(c, 0)
+                    cComp = runComputer()
                     next(cComp); cComp.send(c)
-                    dComp = runComputer(d, 0)
+                    dComp = runComputer()
                     next(dComp); dComp.send(d)
-                    eComp = runComputer(e, 0)
+                    eComp = runComputer()
                     next(eComp); eComp.send(e)
 
                     val = 0
